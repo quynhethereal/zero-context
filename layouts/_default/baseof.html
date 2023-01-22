@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+{{- partial "head.html" . -}}
+
+<body>
+    {{- partial "header.html" . -}}
+    <div id="container p-3 my-3 bg-dark text-white">
+        {{- block "main" . }}{{- end }}
+    </div>
+    {{- partial "script.html" . -}}
+</body>
+{{- partial "footer.html" . -}}
+
+</html>

@@ -1,0 +1,27 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+
+[menu]
+    [[menu.main]]
+    name = "home"
+    url = "/"
+    weight = 1
+    [[menu.main]]
+    name = "blog"
+    url = "/blog/"
+    weight = 2
+    [[menu.main]]
+    name = "tech"
+    url = "/blog/"
+    weight = 2
+    [[menu.main]]
+    name = "database"
+    url = "/blog/"
+    parent="tech"
+    weight = 2
+    [[menu.main]]
+    name = "about"
+    url = "/blog/"
+    weight = 3
+[markup.goldmark.renderer]
+  unsafe = true

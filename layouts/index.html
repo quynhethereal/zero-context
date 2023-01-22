@@ -1,0 +1,24 @@
+{{ define "main" }}
+<div id="home-jumbotron" class="jumbotron text-left">
+    
+    <div class="container">
+        <h2 class="title">{{.Title}}</h2>
+        <p class="description">{{.Description}}</p>
+        <hr class="my-4 bg-light">
+
+  <div class="homepage-content">
+    <p class="lead">{{.Content}}
+
+    </p>
+    <!-- Note that the content for index.html, as a sort of list page, will pull from content/_index.md -->
+  </div>
+  <div>
+    {{ range first 10 .Site.RegularPages }}
+        {{ .Render "summary"}}
+    {{ end }}
+  </div>
+        
+    </div>
+  
+</div>
+{{ end }}

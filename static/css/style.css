@@ -1,0 +1,56 @@
+.nav-link {
+    color: white;
+}
+
+.dropdown-toggle {
+    color: white;
+}
+
+
+.fill-width.dropdown {
+    position: static;
+}
+
+.fill-width.dropdown>.dropdown-menu {
+    left: auto;
+}
+
+.fill-width.dropdown>.dropdown-menu>li>a {
+    white-space: normal;
+}
+
+a:hover {
+    opacity: 50%;
+    color: #fff
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #000;
+}
+
+footer {
+    background-color: rgba(40, 45, 52, 0.9);
+    color: white;
+    height:100px
+}
+
+#home-jumbotron {
+    background-color: #000;
+    color: #fff;
+
+}
+
+.homepage-content {
+    font-size: 16px;
+    line-height: 29px;
+    font-weight: 400;
+}
+
+.description{
+    color: #b5b5b5
+}
+
+.description b{
+    color: #ffff
+}
