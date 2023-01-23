@@ -1,58 +1,55 @@
-<div id="nav-border" class="container-fluid px-0">
-    <nav class="navbar navbar-dark px-5" style="background-color: #000">
-        <a class="navbar-brand navbar-left" href="#">
-            <h3>
-                zero context
-               
-              </h3>
-        
-        </a>
+<div class="m-4">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand navbar-left" href="#">
+                <h3>
+                    zero context
 
-        <div class="d-flex">
+                </h3>
 
-            {{ $currentPage := . }}
-            {{ range .Site.Menus.main }}
-
-            {{- if .HasChildren -}}
-            <!-- https://stackoverflow.com/questions/26147186/how-to-restrict-width-of-bootstrap-3-dropdown-menu-in-navbar -->
-            <div class="fill-width dropdown" id="tech-dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" id="{{.Name}}"
-                    data-bs-toggle="dropdown">
-                    {{ if .Pre }}
-                    {{ $icon := printf "<i data-feather=\"%s\"></i> " .Pre | safeHTML }}
-                    {{ $icon }}
-
-                    {{ end }}
-                    {{ $text := print .Name | safeHTML }}
-                    {{ $text }}
-                </a>
-
-
-                <ul class="dropdown-menu " aria-labelledby="{{.Name}}">
-                    {{ range .Children }}
-                    <li class="{{ if $currentPage.HasMenuCurrent " main" . }}active{{ end }}">
-                        <a class="dropdown-item" href="{{ .URL }}">{{.Name}}</a></li>
-                    </li>
-                    {{ end }}
-                </ul>
-            </div>
-
-
-
-
-            {{ else }}
-            <a class="nav-link p-2" href="{{ .URL }}">
-                {{ if .Pre }}
-                {{ $icon := printf "<i data-feather=\"%s\"></i> " .Pre | safeHTML }}
-                {{ $icon }}
-
-                {{ end }}
-                {{ $text := print .Name | safeHTML }}
-                {{ $text }}
             </a>
-            {{ end }}
-            {{ end }}
 
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    {{ $currentPage := . }}
+                    {{ range .Site.Menus.main }}
+
+                    {{- if .HasChildren -}}
+                    <!-- https://stackoverflow.com/questions/26147186/how-to-restrict-width-of-bootstrap-3-dropdown-menu-in-navbar -->
+                    <div class="fill-width dropdown" id="tech-dropdown">
+                        <a class="nav-item nav-link dropdown-toggle" href="#" role="button" id="{{.Name}}"
+                            data-bs-toggle="dropdown">
+                            {{ $text := print .Name | safeHTML }}
+                            {{ $text }}
+                        </a>
+
+
+                        <ul class="dropdown-menu " aria-labelledby="{{.Name}}">
+                            {{ range .Children }}
+                            <li class="{{ if $currentPage.HasMenuCurrent " main" . }}active{{ end }}">
+                                <a class="dropdown-item" href="{{ .URL }}">{{.Name}}</a>
+                            </li>
+                            </li>
+                            {{ end }}
+                        </ul>
+                    </div>
+
+
+
+
+                    {{ else }}
+                    <a class="nav-item nav-link" href="{{ .URL }}">
+                        {{ $text := print .Name | safeHTML }}
+                        {{ $text }}
+                    </a>
+                    {{ end }}
+                    {{ end }}
+                </div>
+            </div>
         </div>
     </nav>
 </div>
